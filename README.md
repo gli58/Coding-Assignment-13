@@ -40,12 +40,14 @@ The component library contains the following components:
   - TableFooter
 
 Each component folder contains:
+```
 ComponentName/
 ├── ComponentName.tsx
 ├── ComponentName.types.tsx
 ├── ComponentName.tests.tsx
 ├── ComponentName.stories.tsx
 └── index.ts
+```
 
 
 ---
@@ -108,6 +110,7 @@ docker builder prune -af
 ---
 
 ## 7. File Structure
+```
 ui-garden/
 │
 ├── Dockerfile
@@ -132,6 +135,7 @@ ui-garden/
 ├── HeroImage/
 ├── Card/
 └── Table/
+```
 
 
 ---
