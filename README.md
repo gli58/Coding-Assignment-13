@@ -1,5 +1,3 @@
-README.md
-
 Project Title: Web Component Library (Coding Assignment 12)
 Student: Gavin Li
 Course: Web Development 2
