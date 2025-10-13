@@ -1,46 +1,150 @@
-# Getting Started with Create React App
+README.md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Title: Web Component Library (Coding Assignment 12)
+Student: Gavin Li
+Course: Web Development 2
+Date: October 2025
 
-## Available Scripts
+1. Overview
 
-In the project directory, you can run:
+This project is a web component library built using React, TypeScript, and Storybook.
+The goal of this assignment is to create reusable, responsive UI components and deploy them using Docker and Nginx.
+Each component has both a default and a disabled state, and Storybook provides interactive controls for visual testing.
 
-### `npm start`
+2. Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React with TypeScript
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Styled-Components for styling
 
-### `npm test`
+Storybook for documentation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Jest and React Testing Library for testing
 
-### `npm run build`
+Docker and Nginx for deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Components Included
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The component library contains the following components:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Button
+Label
+Text
+Dropdown
+Radio
+Card
+Img
+HeroImage
+Table
+ • TableHeader
+ • TableRow
+ • TableCell
+ • TableFooter
 
-### `npm run eject`
+Each component folder contains:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ComponentName/
+  ├── ComponentName.tsx
+  ├── ComponentName.types.tsx
+  ├── ComponentName.tests.tsx
+  ├── ComponentName.stories.tsx
+  └── index.ts
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run all tests:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+npm test
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Expected output:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Test Suites: 13 passed, 13 total
+Tests:       26 passed, 26 total
+
+
+Each component includes:
+
+A test to confirm that it renders correctly.
+
+A test to confirm that the background color or style changes when disabled.
+
+5. Local Development
+
+To run the app in development mode:
+
+npm install
+npm start
+
+
+Then open:
+
+http://localhost:3000
+
+6. Docker Setup
+(1) Build and Run Main Component Library
+
+Build a production image and start the container:
+
+docker build -t li_gavin_coding_assignment12 -f Dockerfile .
+docker run -d --name li_gavin_coding_assignment12 -p 8083:8083 li_gavin_coding_assignment12
+
+
+Access the site at:
+
+http://127.0.0.1:8083
+
+(2) Build and Run Storybook
+docker build -t li_gavin_storybook -f Dockerfile.storybook .
+docker run -d --name li_gavin_storybook -p 6006:6006 li_gavin_storybook
+
+
+Access Storybook at:
+
+http://127.0.0.1:6006
+
+(3) Clean Up Old Containers
+docker stop li_gavin_coding_assignment12 li_gavin_storybook
+docker rm li_gavin_coding_assignment12 li_gavin_storybook
+docker rmi li_gavin_coding_assignment12 li_gavin_storybook
+docker builder prune -af
+
+7. File Structure
+ui-garden/
+│
+├── Dockerfile
+├── Dockerfile.storybook
+├── nginx.conf
+├── nginx-storybook.conf
+├── package.json
+├── README.md
+└── src/
+    ├── App.tsx
+    ├── theme.ts
+    ├── setupTests.ts
+    ├── test-utils.tsx
+    └── lib/
+        └── components/
+            ├── Button/
+            ├── Label/
+            ├── Text/
+            ├── Dropdown/
+            ├── Radio/
+            ├── Img/
+            ├── HeroImage/
+            ├── Card/
+            └── Table/
+
+8. Explanation and Learning Summary
+
+This assignment demonstrates how to:
+
+Build a component library using React and TypeScript.
+
+Use Styled-Components for consistent theming and responsiveness.
+
+Document and test UI components using Storybook.
+
+Write and run automated tests.
+
+Package and deploy a production build with Docker and Nginx.
