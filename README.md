@@ -34,19 +34,20 @@ The component library contains the following components:
 - Img
 - HeroImage
 - Table
-  - TableHeader
-  - TableRow
-  - TableCell
-  - TableFooter
+ • TableHeader
+ • TableRow
+ • TableCell
+ • TableFooter
 
 Each component folder contains:
 ```
 ComponentName/
-├── ComponentName.tsx
-├── ComponentName.types.tsx
-├── ComponentName.tests.tsx
-├── ComponentName.stories.tsx
-└── index.ts
+  ├── ComponentName.tsx
+  ├── ComponentName.types.tsx
+  ├── ComponentName.tests.tsx
+  ├── ComponentName.stories.tsx
+  └── index.ts
+
 ```
 
 
@@ -54,27 +55,34 @@ ComponentName/
 
 ## 4. Testing
 To run all tests:
+```
+npm test
+```
 
 Expected output:
+```
 Test Suites: 13 passed, 13 total
 Tests: 26 passed, 26 total
+```
 
 
 Each component includes:
-- A test to confirm that it renders correctly.
-- A test to confirm that the background color or style changes when disabled.
+1. A test to confirm that it renders correctly.
+2. A test to confirm that the background color or style changes when disabled.
 
 ---
 
 ## 5. Local Development
 To run the app in development mode:
+```
 npm install
 npm start
-
+```
 
 Then open:
+```
 http://localhost:3000
-
+```
 
 ---
 
@@ -82,29 +90,34 @@ http://localhost:3000
 
 ### (1) Build and Run Main Component Library
 Build a production image and start the container:
+```
 docker build -t li_gavin_coding_assignment12 -f Dockerfile .
 docker run -d --name li_gavin_coding_assignment12 -p 8083:8083 li_gavin_coding_assignment12
-
+```
 
 Access the site at:
+```
 http://127.0.0.1:8083
-
+```
 
 ### (2) Build and Run Storybook
+```
 docker build -t li_gavin_storybook -f Dockerfile.storybook .
 docker run -d --name li_gavin_storybook -p 6006:6006 li_gavin_storybook
-
+```
 
 Access Storybook at:
+```
 http://127.0.0.1:6006
-
+```
 
 ### (3) Clean Up Old Containers
+```
 docker stop li_gavin_coding_assignment12 li_gavin_storybook
 docker rm li_gavin_coding_assignment12 li_gavin_storybook
 docker rmi li_gavin_coding_assignment12 li_gavin_storybook
 docker builder prune -af
-
+```
 
 
 ---
@@ -120,21 +133,21 @@ ui-garden/
 ├── package.json
 ├── README.md
 └── src/
-├── App.tsx
-├── theme.ts
-├── setupTests.ts
-├── test-utils.tsx
-└── lib/
-└── components/
-├── Button/
-├── Label/
-├── Text/
-├── Dropdown/
-├── Radio/
-├── Img/
-├── HeroImage/
-├── Card/
-└── Table/
+    ├── App.tsx
+    ├── theme.ts
+    ├── setupTests.ts
+    ├── test-utils.tsx
+    └── lib/
+        └── components/
+            ├── Button/
+            ├── Label/
+            ├── Text/
+            ├── Dropdown/
+            ├── Radio/
+            ├── Img/
+            ├── HeroImage/
+            ├── Card/
+            └── Table/
 ```
 
 
