@@ -15,4 +15,6 @@ export default meta;
 type Story = StoryObj<typeof Radio>;
 
 export const Default: Story = { args: { name: 'group', label: 'Yes' } };
-export const Disabled: Story = { args: { name: 'group', label: 'No', disabled: true } };
+export const Disabled: Story = {
+  args: { name: 'group', label: 'No', disabled: true },
+};

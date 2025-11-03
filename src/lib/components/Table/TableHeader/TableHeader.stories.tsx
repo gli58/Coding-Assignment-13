@@ -8,5 +8,22 @@ const meta: Meta<typeof TableHeader> = {
 export default meta;
 
 type Story = StoryObj<typeof TableHeader>;
-export const Default: Story = { args: { children: <tr><th>Header</th></tr> } };
-export const Disabled: Story = { args: { children: <tr><th>Header</th></tr>, disabled: true } };
+export const Default: Story = {
+  args: {
+    children: (
+      <tr>
+        <th>Header</th>
+      </tr>
+    ),
+  },
+};
+export const Disabled: Story = {
+  args: {
+    children: (
+      <tr>
+        <th>Header</th>
+      </tr>
+    ),
+    disabled: true,
+  },
+};

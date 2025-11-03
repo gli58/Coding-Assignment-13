@@ -9,4 +9,6 @@ export default meta;
 
 type Story = StoryObj<typeof TableRow>;
 export const Default: Story = { args: { children: <td>Row</td> } };
-export const Disabled: Story = { args: { children: <td>Row</td>, disabled: true } };
+export const Disabled: Story = {
+  args: { children: <td>Row</td>, disabled: true },
+};

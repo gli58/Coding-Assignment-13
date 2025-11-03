@@ -8,5 +8,22 @@ const meta: Meta<typeof TableFooter> = {
 export default meta;
 
 type Story = StoryObj<typeof TableFooter>;
-export const Default: Story = { args: { children: <tr><td>Footer</td></tr> } };
-export const Disabled: Story = { args: { children: <tr><td>Footer</td></tr>, disabled: true } };
+export const Default: Story = {
+  args: {
+    children: (
+      <tr>
+        <td>Footer</td>
+      </tr>
+    ),
+  },
+};
+export const Disabled: Story = {
+  args: {
+    children: (
+      <tr>
+        <td>Footer</td>
+      </tr>
+    ),
+    disabled: true,
+  },
+};

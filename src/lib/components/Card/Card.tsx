@@ -7,7 +7,8 @@ const Box = styled.div<{ $disabled?: boolean; $bg?: string }>`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radius};
   padding: ${({ theme }) => theme.spacing(3)};
-  color: ${({ $disabled, theme }) => ($disabled ? theme.colors.disabledText : theme.colors.text)};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.colors.disabledText : theme.colors.text};
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
   opacity: ${({ $disabled }) => ($disabled ? 0.7 : 1)};
   transition: all 0.2s ease;

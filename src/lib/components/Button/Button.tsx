@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled from 'styled-components';
 import type { ButtonProps } from './Button.types';
@@ -9,10 +8,13 @@ const StyledButton = styled.button<{ $bg?: string; $disabled?: boolean }>`
   font-weight: 600;
   background: ${({ $disabled, $bg, theme }) =>
     $disabled ? theme.colors.disabledBg : ($bg ?? theme.colors.primary)};
-  color: ${({ $disabled, theme }) => ($disabled ? theme.colors.disabledText : '#fff')};
+  color: ${({ $disabled, theme }) =>
+    $disabled ? theme.colors.disabledText : '#fff'};
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ $disabled }) => ($disabled ? 0.7 : 1)};
-  transition: filter 0.2s ease, transform 0.05s ease;
+  transition:
+    filter 0.2s ease,
+    transform 0.05s ease;
 
   &:hover {
     filter: ${({ $disabled }) => ($disabled ? 'none' : 'brightness(1.05)')};

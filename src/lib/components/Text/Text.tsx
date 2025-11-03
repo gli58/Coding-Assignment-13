@@ -10,9 +10,19 @@ const P = styled.p<{ $disabled?: boolean; $color?: string }>`
   line-height: 1.5;
 `;
 
-export function Text({ children = 'Text', color, disabled, ...rest }: TextProps) {
+export function Text({
+  children = 'Text',
+  color,
+  disabled,
+  ...rest
+}: TextProps) {
   return (
-    <P $disabled={!!disabled} $color={color} aria-disabled={disabled ? 'true' : undefined} {...rest}>
+    <P
+      $disabled={!!disabled}
+      $color={color}
+      aria-disabled={disabled ? 'true' : undefined}
+      {...rest}
+    >
       {children}
     </P>
   );

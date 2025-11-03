@@ -14,7 +14,9 @@ const Box = styled.select<{ $bg?: string; $disabled?: boolean }>`
     $disabled ? theme.colors.disabledText : theme.colors.text};
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'default')};
   opacity: ${({ $disabled }) => ($disabled ? 0.8 : 1)};
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
 
   &:focus-visible {
     outline: none;
@@ -43,8 +45,8 @@ export function Dropdown({
     defaultValue !== undefined
       ? defaultValue
       : placeholder && !isControlled
-      ? ''
-      : undefined;
+        ? ''
+        : undefined;
 
   return (
     <Box
@@ -67,7 +69,7 @@ export function Dropdown({
           No options
         </option>
       ) : (
-        safeOptions.map((o) => (
+        safeOptions.map(o => (
           <option key={o.value} value={o.value}>
             {o.label}
           </option>

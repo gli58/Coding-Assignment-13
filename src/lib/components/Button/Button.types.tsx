@@ -1,4 +1,3 @@
-
 import type { ReactNode, CSSProperties, MouseEventHandler } from 'react';
 export type ButtonType = 'button' | 'submit' | 'reset';
 export interface ButtonProps {
