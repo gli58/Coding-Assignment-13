@@ -4,8 +4,6 @@
 Business Systems Build and Testing
 November 2025
 
-## What This Is
-
 A React component library with automated code quality checks. Built on top of Assignment 12, this adds Husky pre-commit hooks, ESLint, Prettier, and GitHub Actions CI/CD. Everything runs in Docker on port 8018.
 
 ## Tech Stack
