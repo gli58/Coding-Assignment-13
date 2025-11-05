@@ -25,4 +25,6 @@ function App() {
 
 export default App;
 
-console.log('This will cause a lint error');
+const x = 1;
+const y = 2;
+const z = 3;
