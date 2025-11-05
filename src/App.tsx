@@ -24,3 +24,5 @@ function App() {
 }
 
 export default App;
+
+console.log('This will cause a lint error');
